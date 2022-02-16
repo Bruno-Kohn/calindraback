@@ -1,0 +1,54 @@
+{
+    "openapi": "3.0.0",
+    "info" : {
+        "title": "Geocode Location Compare API",
+        "description": "Repository to compare distance between two addresses through latitude and longitude",
+        "contact": {
+            "email": "brunokohn1993@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:4000",
+            "description": "Beta API"
+        }
+    ],
+    "paths": {
+        "/address": {
+            "post":{
+                "summary": "Check addresses",
+                "description": "This route checks two or more addresses and return their distances and the and which address is the closest",
+                "tags": ["address"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "address": "string"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "tool": {
+                                    "value": {
+                                        "address": "Rua 19 de Fevereiro, 34 Botafogo, Rio de Janeiro RJ, 22280030; Rua Jose Higino, 253 Tijuca, Rio de Janeiro RJ, 20520201; Rua General Belegarde, 232 Engenho Novo, Rio de Janeiro RJ, 20710003; Av. Rio Branco, 1 Centro, Rio de Janeiro RJ, 20090003"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "500": {
+                        "description": " Internal Server Error"
+                    }
+                }
+            }
+        }
+    }
+}
