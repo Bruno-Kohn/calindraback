@@ -26,7 +26,7 @@ npm i
 ```bash
 npx nodemon ./src/server.js
 ```
-```
+
 Or you can try it out using swagger to a better experience
 
 1. Clone this repository
